@@ -40,6 +40,7 @@ Install package dependencies.
     sudo apt install libmemcached-dev
     sudo apt-get install libz-dev
     sudo apt-get install postgis
+    sudo apt install asterisk*
 ```
 
 To bulk install the requirements in Ubuntu run:
@@ -84,6 +85,7 @@ Replace username and db name accordingly.
   cd myhelpline
   cp helpline/config.ini-dist helpline/config.ini
   cp myhelpline/localsettings.py-sample myhelpline/localsettings.py
+  cp -r helpline /opt/asterisk
  ```
   Edit config.ini file with Manager Asterisk parameters
 
@@ -150,7 +152,15 @@ bower install --allow-root
 
 Go to url of the machine http://IP:8000
 
-
+## Configure HTTP Server
+ ```
+   sudo mkdir /opt/asterisk
+   cd /opt/asterisk/helpline
+   virtualenv corenv
+   source to the environment
+   python astrun.py    //install all the dependancies
+ ```
+ 
 ## How to contribute
 
  * Fork the project
